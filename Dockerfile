@@ -30,6 +30,10 @@ RUN ln -s /usr/lib/python3.11/site-packages/pcbnew.py \
 RUN ln -s /usr/lib/python3.11/site-packages/_pcbnew.so \
   /opt/venv/lib/python3.11/site-packages/_pcbnew.so
 
+RUN \
+  mkdir -p /usr/local/share/fonts/TT/ && \
+  curl -L "https://github.com/hikikomori82/osifont/blob/master/osifont-lgpl3fe.ttf?raw=true" -o /usr/local/share/fonts/TT/osifont-lgpl3fe.ttf
+
 # Setup an entrypoint script
 COPY entrypoint.sh /entrypoint.sh
 COPY entrypoint-user.sh /entrypoint-user.sh
