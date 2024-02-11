@@ -11,7 +11,7 @@ docker pull ghcr.io/spielhuus/docker-elektrophon:main
 
 ```
 docker run -v {PATH TO CONTENT}:/github/workspace \
-           -ti --rm ghcr.io/spielhuus/docker-elektrophon:main \
+           -ti --rm ghcr.io/spielhuus/elektron-docker:nightly \
            build
 ```
 
@@ -20,7 +20,7 @@ docker run -v {PATH TO CONTENT}:/github/workspace \
 ```
 docker run -v {PATH TO CONTENT}:/github/workspace \
            -p 1313:1313 -ti --rm \
-           ghcr.io/spielhuus/docker-elektrophon:main \
+           ghcr.io/spielhuus/elektron-docker:nightly \
            serve
 ```
 
@@ -28,7 +28,7 @@ docker run -v {PATH TO CONTENT}:/github/workspace \
 
 ```
 docker run -v {PATH TO CONTENT}:/github/workspace \
-           -ti --rm ghcr.io/spielhuus/docker-elektrophon:main \
+           -ti --rm ghcr.io/spielhuus/elektron-docker:nightly \
            clean
 ```
 
@@ -37,7 +37,7 @@ docker run -v {PATH TO CONTENT}:/github/workspace \
 ```
 docker run -v {PATH TO CONTENT}:/github/workspace \
            -p 8888:8888 -ti --rm \
-           ghcr.io/spielhuus/docker-elektrophon:main \
+           ghcr.io/spielhuus/elektron-docker:nightly \
            notebook
 ```
 
@@ -49,7 +49,7 @@ docker run -v {PATH TO CONTENT}:/github/workspace \
            --network host \
            -e DISPLAY=$DISPLAY \
            -e COOKIE="`xauth list`" \
-           -ti ghcr.io/spielhuus/docker-elektrophon:main \
+           -ti ghcr.io/spielhuus/elektron-docker:nightly \
            kicad
 ```
 
