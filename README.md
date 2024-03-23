@@ -10,7 +10,7 @@ docker pull ghcr.io/spielhuus/docker-elektrophon:main
 ## generate the pages
 
 ```
-docker run -v {PATH TO CONTENT}:/github/workspace \
+docker run -v $(pwd):/github/workspace \
            -ti --rm ghcr.io/spielhuus/elektron-docker:nightly \
            build
 ```
@@ -18,7 +18,7 @@ docker run -v {PATH TO CONTENT}:/github/workspace \
 ## serve the blog locally
 
 ```
-docker run -v {PATH TO CONTENT}:/github/workspace \
+docker run -v $(pwd):/github/workspace \
            -p 1313:1313 -ti --rm \
            ghcr.io/spielhuus/elektron-docker:nightly \
            serve
@@ -27,24 +27,15 @@ docker run -v {PATH TO CONTENT}:/github/workspace \
 ## clean the local repository
 
 ```
-docker run -v {PATH TO CONTENT}:/github/workspace \
+docker run -v $(pwd):/github/workspace \
            -ti --rm ghcr.io/spielhuus/elektron-docker:nightly \
            clean
-```
-
-## run jupyterlab
-
-```
-docker run -v {PATH TO CONTENT}:/github/workspace \
-           -p 8888:8888 -ti --rm \
-           ghcr.io/spielhuus/elektron-docker:nightly \
-           notebook
 ```
 
 ## run kicad inside the container
 
 ```
-docker run -v {PATH TO CONTENT}:/github/workspace \
+docker run -v $(pwd):/github/workspace \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            --network host \
            -e DISPLAY=$DISPLAY \
@@ -57,7 +48,6 @@ docker run -v {PATH TO CONTENT}:/github/workspace \
 
 * https://docker.io
 * https://gohugo.io/
-* https://jupyter.org/
 
 ## License
 
