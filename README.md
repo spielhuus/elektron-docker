@@ -1,5 +1,6 @@
 # docker-elektrophon
-Docker build image for elektrophon
+
+Docker build image for [elektron](https://github.com/spielhuus/elektron-rs) based projects like the [elektrophon](https://github.com/spielhuus/elektrophon).
 
 ## download the docker image from dockerhub
 
