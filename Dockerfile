@@ -23,7 +23,7 @@ RUN python -m venv /opt/venv && \
       sympy \
       scipy \
       pdoc \
-      elektron_rs==0.0.4
+      elektron_rs==0.0.5
 
 RUN ln -s /usr/lib/python3.11/site-packages/pcbnew.py \
   /opt/venv/lib/python3.11/site-packages/pcbnew.py
